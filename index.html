@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviator Predictor</title>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #00ffc8;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background-color: #1e293b;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffc8;
+    }
+    .predict-btn {
+      background-color: #00ffc8;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .predict-btn:hover {
+      background-color: #00c0a3;
+    }
+    .multiplier {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Aviator Predictor</h1>
+    <button class="predict-btn" onclick="checkPassword()">Predict</button>
+    <div class="multiplier" id="prediction"></div>
+  </div>
+
+  <script>
+    const PASSWORD = "aviator2025"; // Changeable password
+
+    function checkPassword() {
+      const input = prompt("Enter password to continue:");
+      if (input === PASSWORD) {
+        showPrediction();
+      } else {
+        alert("Incorrect password!");
+      }
+    }
+
+    function showPrediction() {
+      const multiplier = (Math.random() * (10 - 1) + 1).toFixed(2);
+      document.getElementById("prediction").innerText = `🎯 Next Multiplier: ${multiplier}x`;
+    }
+  </script>
+</body>
+</html>
